@@ -1,0 +1,17 @@
+{% extends 'producto/base.html' %}
+
+{% block producto %}
+
+    {% for producto in object_list %}
+        <ul>
+           <li> {{producto.nombre}} {{producto.precio}} </li>
+                <a href="{% url 'producto:producto_detail' producto.id %}">ver detalle</a>
+                <a href="">actualizar</a>
+                <a href="">eliminar</a>
+           
+        </ul>   
+    {% endfor %}
+
+
+    <button><a href="{% url 'home:index' %}">Ir atras</a></button>
+{% endblock producto %}

@@ -1,0 +1,18 @@
+{% extends 'producto/base.html' %}
+
+{% block producto %}
+
+<ul> 
+    {{producto.nombre}}
+    {{producto.descripcion}}
+    {{producto.talle}}
+    {{producto.stock}}
+    {{producto.precio}}              
+
+</ul>
+
+    
+  
+
+    <button><a href="{% url 'home:index' %}">Ir atras</a></button>
+{% endblock producto %}

@@ -1,0 +1,13 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    <h2>HOME</h2>
+{% endblock title %}
+    
+{% block content %}
+    <p><a href="{% url 'cliente:crear' %}">Crear Clientes</a></p>
+    <p><a href="{% url 'producto:producto_list' %}">productos</a></p>
+    <p><a href="{% url 'comentario:index' %}">Comentarios</a></p>
+    <p><a href="{% url 'cliente:index' %}">Clientes</a></p>
+    <p><a href="{% url 'home:about' %}">Quienes somos ?</a></p>  
+{% endblock content %}
