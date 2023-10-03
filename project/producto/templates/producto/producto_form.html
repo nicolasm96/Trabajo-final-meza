@@ -1,0 +1,15 @@
+{% extends 'producto/base.html' %}
+
+{% block producto %}
+
+    <h3>producto</h3>
+
+    <form action=""method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+
+    <button><a href="{% url 'producto:producto_list' %}">Ir atras</a></button>
+    
+{% endblock producto %}

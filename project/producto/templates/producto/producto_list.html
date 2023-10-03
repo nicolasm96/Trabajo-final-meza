@@ -2,16 +2,23 @@
 
 {% block producto %}
 
+    <div class="py-4">
+        <form action="" method="get">
+            <input type="text" name="buscar" placeholder="Buscar producto">
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+
     {% for producto in object_list %}
         <ul>
-           <li> {{producto.nombre}} {{producto.precio}} </li>
+           <li> {{producto.nombre}}   <P> $ {{producto.precio}}</P> </li>
                 <a href="{% url 'producto:producto_detail' producto.id %}">ver detalle</a>
-                <a href="">actualizar</a>
-                <a href="">eliminar</a>
+                <a href="{% url 'producto:producto_update' producto.id %}">actualizar</a>
+                <a href="{% url 'producto:producto_delete' producto.id %}">eliminar</a>
            
         </ul>   
     {% endfor %}
 
-
+    <button><a href="{% url 'producto:producto_create' %}">agregar producto</a></button>
     <button><a href="{% url 'home:index' %}">Ir atras</a></button>
 {% endblock producto %}

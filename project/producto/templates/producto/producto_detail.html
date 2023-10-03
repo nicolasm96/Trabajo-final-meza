@@ -3,16 +3,14 @@
 {% block producto %}
 
 <ul> 
-    {{producto.nombre}}
-    {{producto.descripcion}}
-    {{producto.talle}}
-    {{producto.stock}}
-    {{producto.precio}}              
-
+    <h3>{{producto.nombre}}</h3>
+    <p>Talle: {{producto.talle}}</p>
+    <p>stock: {{producto.stock}}</p>
+    <p>precio: $ {{producto.precio}}</p>
+    <h4>Descripcion</h4>
+    <p>{{producto.descripcion}}</p>
+       
 </ul>
 
-    
-  
-
-    <button><a href="{% url 'home:index' %}">Ir atras</a></button>
+    <button><a href="{% url 'producto:producto_list' %}">Ir atras</a></button>
 {% endblock producto %}

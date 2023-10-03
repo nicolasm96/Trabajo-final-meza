@@ -1,7 +1,7 @@
 from django import forms
-from .models import Producto
+from . import models
 
 class ProductoForm(forms.ModelForm):
     class Meta:
-        model = Producto
+        model = models.Producto
         fields = "__all__"

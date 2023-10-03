@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import DetailView, ListView, DeleteView
-from django.views.generic.edit import CreateView
+from django.views.generic import DetailView, ListView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 
 
@@ -17,14 +17,28 @@ class ProductoList(ListView):
         else:
             object_list = models.Producto.objects.all()
         return object_list
-       
+    
+      
 class ProductoDetail(DetailView):
     model = models.Producto
+   
 
 class ProductoCreate(CreateView):
     model = models.Producto
     form_class = forms.ProductoForm
     success_url = reverse_lazy("producto:producto_list")
+
+
+class ProductoUpdate(UpdateView):
+    model = models.Producto
+    form_class = forms.ProductoForm
+    success_url = reverse_lazy("producto:producto_list")
+
+
+class ProductoDelete(DeleteView):
+    model = models.Producto
+    success_url = reverse_lazy("producto:producto_list")
+
 
 
 # Create your views here.
