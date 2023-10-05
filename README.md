@@ -40,6 +40,10 @@ python manage.py runserver
 
 ## Crear la app home
 
+- PARA QUE SIRVE HOME?
+-  La idea de home es que sea nuestro menu principal y su funcion es una facil navegacion por la web
+
+
 - Crear la app `home` (django-admin startapp home)
 - en config en la parte de seting agregamos `home` a  `INSTALLED_APPS`
 - en viwes creamos la funcion index
@@ -58,6 +62,9 @@ python manage.py runserver
 
 ## Crear la app comentario
 
+- PARA QUE SIRVE COMENTARIOS ?
+- Sirve para que nuestros clientes , dejen un comentario y cuenten su experiencia comprando en la tienda 
+
 - Crear la app `comentario` (django-admin startapp comentario)
 - en config en la parte de seting agregamos `comentario` a  `INSTALLED_APPS`
 - en carpeta `models.py` creamos las clase comentario
@@ -74,9 +81,13 @@ python manage.py runserver
 - completamos lo que queremos visualizar dentro del html
 - python manage.py makemigrations
 - python manage.py migrate
+- se agrego el boton eliminar , para eliminar mensajes 
 
 
 ## Crear la app cliente
+
+- PARA QUE SIRVE CLIENTES ?
+- Sirve para mostras nuestros clientes mas importantes 
 
 - Crear la app `cliente` (django-admin startapp cliente)
 - en config en la parte de seting agregamos `cliente` a  `INSTALLED_APPS`
@@ -97,12 +108,24 @@ python manage.py runserver
 - python manage.py migrate
 
 
-## Crear la app  compraventa (en desarollo)
+## Crear la app  producto
+- PARA QUE SIRVE PRODUCTO?
+- Sirve para mostrar todo los productos disponibles , con  su descripcion , precio , talle y disponibilidad , ademas de agregar o quitar esos productos
 
-- Crear la app `compraventa` (django-admin startapp cliente)
-- en config en la parte de seting agregamos `compraventa` a  `INSTALLED_APPS`
--`sigue en desarollo`
-
+- Crear la app `producto` (django-admin startapp producto)
+- en config en la parte de seting agregamos `producto` a  `INSTALLED_APPS`
+- en carpeta `models.py` creamos las clases producto
+- en viwes creamos la funcion index `productolist` , `productodetail` , `productocreate` , `productoupdate` y `productodelate`
+- definimos nuestra `url`("")
+- creamos la carpeta templates/producto
+- creamos nuestro archivo `base.html`
+- en el archivo index utilizamos la herencia de `home/base.html`
+- completamos lo que queremos visualizar dentro del html
+- agregamos un forms para agregar / modificar productos
+- se agrego `producto_list.html` donde podremnos visualizar todos nuestros productos
+- se agrego `producto_from.html` con este formulario podremos agregar o modificar nuestros productos
+- se agrego `producto_detail.html` donde podremos ver en detalle las caracteristicas del producto
+- se agrego `producto_confirm_delate.html` esta se creo para confirmar la eliminacion de un producto
 
 
 ## InicializaciÃ³n de Git
