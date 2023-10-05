@@ -1,13 +1,16 @@
 {% extends 'home/base.html' %}
 
 {% block title %}
-    <h2>HOME</h2>
 {% endblock title %}
     
 {% block content %}
-    <p><a href="{% url 'cliente:crear' %}">Crear Clientes</a></p>
-    <p><a href="{% url 'producto:producto_list' %}">productos</a></p>
-    <p><a href="{% url 'comentario:index' %}">Comentarios</a></p>
-    <p><a href="{% url 'cliente:index' %}">Clientes</a></p>
-    <p><a href="{% url 'home:about' %}">Quienes somos ?</a></p>  
+    
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://media.c5n.com/p/4e0d1bdc5d57d37e9df0c694fd4f9e12/adjuntos/326/imagenes/000/169/0000169844/1200x675/smart/camisetas-futbol.jpg" alt="..." /></div>
+    <div class="col-lg-5">
+        <h1 class="font-weight-light">Las mejores camisetas </h1>
+        <p>Aca vas a podes encontrar las mejores camisetas de futbol tanto vintaje como modernas, contamos con camisetas tanto de clubs como selecciones</p>
+        <a class="btn btn-primary" href="{% url 'producto:producto_list' %}">Camisetas</a>
+    </div>
+</div>   
 {% endblock content %}

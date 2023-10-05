@@ -9,23 +9,28 @@
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Comentar</button>
+        <button type="submit" class="btn btn-dark">Comentar</button>
     </form>
+        <BR>
+        </BR>
+        <h4>Comentarios existentes:</h4>
+        <ul>
+            {% for comentario in comentarios %}
+                <li>
+                    <h6>{{ comentario.texto }}</h6>
+                    <p style="color: grey;">{{comentario.fecha_creacion}}</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="eliminar_comentario" value="{{ comentario.id }}">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                    <br>
+                </li>
+            {% endfor %}
+        </ul>
 
-    <h2>Comentarios existentes:</h2>
-    <ul>
-        {% for comentario in comentarios %}
-            <li>
-                <p>{{ comentario.texto }}</p>
-                <p>{{comentario.fecha_creacion}}</p>
-                <form method="post">
-                    {% csrf_token %}
-                    <input type="hidden" name="eliminar_comentario" value="{{ comentario.id }}">
-                    <button type="submit">Eliminar</button>
-                </form>
-            </li>
-        {% endfor %}
-    </ul>
+
+
 
     <p><a href="{% url 'home:index' %}">Ir atrás</a></p>
 {% endblock content %}

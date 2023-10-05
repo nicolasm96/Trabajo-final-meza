@@ -1,22 +1,20 @@
 {% extends 'home/base.html' %}
 
-{% block title %}
-
-<h2>Clientes</h2>
-    
-{% endblock title %}
-
 {% block content %}
+<br>
+<h1>CLIENTES</h1>
+<br>
     <ul>
         {% for cliente in clientes %}
-            <li>{{ cliente.nombre }} {{ cliente.apellido }}</li>
+            <li><h5>{{ cliente.nombre }} {{ cliente.apellido }}</h5></li>
         {% endfor %}
     </ul>
-
-
-    <p><a href="{% url 'cliente:crear' %}">crear cliente</a></p>
-    <p><a href="{% url 'home:index' %}">Ir atras</a></p>
-    
+        <br>
+        <button class="btn btn-dark"><a style="color: aliceblue;" href="{% url 'cliente:crear' %}">Crear Cliente</a></button>
+        <br>
+        <br>    
+        <p><a href="{% url 'home:index' %}">Ir atras</a></p>
+        
 {% endblock content %}
 
 

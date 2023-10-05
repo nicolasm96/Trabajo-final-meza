@@ -1,15 +1,18 @@
 {% extends 'producto/base.html' %}
 
 {% block producto %}
-
-    <h3>producto</h3>
-
+    <BR>
+    </BR>
+    <h5>AGREGAR / MODIFICAR</h5>
+    <br>
     <form action=""method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Guardar</button>
+        <br>
+        <button type="submit" class="btn btn-success">Guardar</button>
     </form>
-
-    <button><a href="{% url 'producto:producto_list' %}">Ir atras</a></button>
+ <br>
+ <br>
+    <button class="btn btn-dark"><a style="color: aliceblue;" href="{% url 'producto:producto_list' %}">Ir atras</a></button>
     
 {% endblock producto %}

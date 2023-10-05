@@ -1,16 +1,15 @@
 {% extends 'producto/base.html' %}
 
 {% block producto %}
-
+<br>
 <ul> 
-    <h3>{{producto.nombre}}</h3>
-    <p>Talle: {{producto.talle}}</p>
-    <p>stock: {{producto.stock}}</p>
-    <p>precio: $ {{producto.precio}}</p>
-    <h4>Descripcion</h4>
-    <p>{{producto.descripcion}}</p>
-       
+    <h4>{{producto.nombre}}</h4>
+    <h6>Talle: {{producto.talle}}</h6>
+    <h6>stock: {{producto.stock}}</h6>
+    <h6>precio: $ {{producto.precio}}</ph6>
+    <h5>Descripcion</h5>
+    <p>{{producto.descripcion }}</p>      
 </ul>
-
-    <button><a href="{% url 'producto:producto_list' %}">Ir atras</a></button>
+<br>
+    <button class="btn btn-dark"><a style="color: aliceblue;" href="{% url 'producto:producto_list' %}">Ir atras</a></button>
 {% endblock producto %}

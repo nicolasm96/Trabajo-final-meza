@@ -1,19 +1,20 @@
 {% extends 'producto/base.html' %}
 
 {% block producto %}
-
-    <h3>Eliminar categoria</h3>
-
+<BR>
+</BR>
+    <h4>ELIMINAR CATEGORIA</h4>
     <p>Estas seguro de eliminar el producoto {{ object.nombre }} ? </p>
+    <br>
 
     <form action="" method="post">
         {% csrf_token %}
         <div class="d-grid gap-3">
-            <button type="submit" class="btn-btn-danger">Eliminar</button>
+            <button type="submit" class="btn btn-danger">Eliminar</button>
         </div>
     </form>
-
-    
-    <button><a href="{% url 'producto:producto_list' %}">Ir atras</a></button>
+    <BR>
+    </BR>
+        <button class="btn btn-dark"><a style="color: aliceblue;" href="{% url 'producto:producto_list' %}">Ir atras</a></button>
     
 {% endblock producto %}

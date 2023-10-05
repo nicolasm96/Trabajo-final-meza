@@ -1,18 +1,19 @@
 {% extends 'home/base.html' %}
 
-{% block title %}
-<h2>Crear cliente</h2>   
-{% endblock title %}
-
 {% block content %}
-
+<br>
+<h1>CLIENTES</h1>
+<br>
+<h2>Crear cliente</h2> 
+<br>
 <form action=""method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Guardar</button>
+    <br>
+    <button type="submit"class="btn btn-success">Guardar</button>
 </form>
-
-<p><a href="{% url 'home:index' %}">ir atras</a></p>
+<br>
+<p><a href="{% url 'cliente:index' %}">ir atras</a></p>
 
 
 {% endblock content %}
