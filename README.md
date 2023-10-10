@@ -38,6 +38,17 @@ python manage.py runserver
 - Abrir el navegador y ejecutar el servidor Django en la direcciÃ³n `127.0.0.1:8000`
 
 
+
+
+##  USUARIOS PARA INGRESAR
+
+Usuario : admin
+contraseña : admin
+
+Usuario : Coder
+contraseña : Python2023
+
+
 ## HOME
 
 ### PARA QUE SIRVE HOME?
@@ -152,6 +163,9 @@ git commit -m "Primer commit"
 Para mostrar las ramas:
 ```bash
 git branch
+
+
+
 ```
 
 

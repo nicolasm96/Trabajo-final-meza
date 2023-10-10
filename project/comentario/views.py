@@ -1,8 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import Comentario
 from .forms import ComentarioForm
 
-def index(request):
+@login_required 
+def index(request, ):
     if request.method == 'POST':
         form = ComentarioForm(request.POST)
         if form.is_valid():

@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
@@ -23,19 +24,19 @@ class ProductoDetail(DetailView):
     model = models.Producto
    
 
-class ProductoCreate(CreateView):
+class ProductoCreate(CreateView, LoginRequiredMixin):
     model = models.Producto
     form_class = forms.ProductoForm
     success_url = reverse_lazy("producto:producto_list")
 
 
-class ProductoUpdate(UpdateView):
+class ProductoUpdate(UpdateView, LoginRequiredMixin):
     model = models.Producto
     form_class = forms.ProductoForm
     success_url = reverse_lazy("producto:producto_list")
 
 
-class ProductoDelete(DeleteView):
+class ProductoDelete(DeleteView, LoginRequiredMixin):
     model = models.Producto
     success_url = reverse_lazy("producto:producto_list")
 
