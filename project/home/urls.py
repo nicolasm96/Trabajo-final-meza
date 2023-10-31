@@ -11,6 +11,7 @@ path("", views.index, name="index"),
 path("login/", views.login_request, name="login"),
 path("logout/", LogoutView.as_view(template_name="home/logout.html"), name="logout"),
 path("about/", views.about, name="about"),
+path("registro/", views.registro, name="registro"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
