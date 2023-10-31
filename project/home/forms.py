@@ -24,5 +24,3 @@ class CustomAuthenticationForm(AuthenticationForm):
         }
 
 
-class UserCre
-

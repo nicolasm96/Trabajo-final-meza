@@ -24,19 +24,19 @@ class ProductoDetail(DetailView):
     model = models.Producto
    
 
-class ProductoCreate(CreateView, LoginRequiredMixin):
+class ProductoCreate( LoginRequiredMixin, CreateView ):
     model = models.Producto
     form_class = forms.ProductoForm
     success_url = reverse_lazy("producto:producto_list")
 
 
-class ProductoUpdate(UpdateView, LoginRequiredMixin):
+class ProductoUpdate(LoginRequiredMixin , UpdateView):
     model = models.Producto
     form_class = forms.ProductoForm
     success_url = reverse_lazy("producto:producto_list")
 
 
-class ProductoDelete(DeleteView, LoginRequiredMixin):
+class ProductoDelete( LoginRequiredMixin , DeleteView):
     model = models.Producto
     success_url = reverse_lazy("producto:producto_list")
 
